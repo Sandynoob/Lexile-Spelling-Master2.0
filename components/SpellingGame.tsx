@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Word, ScoreData, WordResult } from '../types';
-import { playAmericanPronunciation } from '../services/geminiService';
+import { playAmericanPronunciation } from '../services/phonicsService';
 
 interface SpellingGameProps {
   words: Word[];

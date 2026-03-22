@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { ScoreData } from '../types';
-import { getAIFeedback } from '../services/geminiService';
+import { getAIFeedback } from '../services/phonicsService';
 
 interface ResultsProps { scoreData: ScoreData; onRestart: () => void; }
 
