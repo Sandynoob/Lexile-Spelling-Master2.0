@@ -17,7 +17,7 @@ const Settings: React.FC = () => {
           <p className="text-slate-600 text-sm leading-relaxed">
             Lexile Master is a professional spelling assessment tool designed for students. 
             It uses the Lexile framework to provide level-appropriate challenges and 
-            leverages AI to generate accurate phonetic segments for learning.
+            leverages a local phonics engine for accurate phonetic segments.
           </p>
         </div>
 
@@ -25,7 +25,7 @@ const Settings: React.FC = () => {
           <h3 className="font-kids text-indigo-900 mb-2">Key Features</h3>
           <ul className="text-slate-600 text-sm space-y-2 list-disc list-inside">
             <li>Lexile-based word levels</li>
-            <li>Real-time phonetic segmentation</li>
+            <li>Local phonetic segmentation</li>
             <li>American English pronunciation</li>
             <li>Detailed progress history</li>
             <li>Offline-first rule engine</li>
@@ -36,13 +36,13 @@ const Settings: React.FC = () => {
           <h3 className="font-kids text-indigo-900 mb-2">Technical Info</h3>
           <p className="text-slate-500 text-xs font-mono mb-2">
             Built with React 19, Tailwind CSS, and Capacitor. 
-            Powered by a Hybrid Phonics Engine (Local First, AI Enhanced).
+            Powered by a Local Phonics Engine (GFW-Immune).
           </p>
           <div className="flex items-center gap-2 text-[10px] text-emerald-600 font-bold bg-emerald-50 p-2 rounded-lg">
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
-            <span>Hybrid Architecture & GFW-Immune</span>
+            <span>Local Architecture & GFW-Immune</span>
           </div>
         </div>
       </div>
