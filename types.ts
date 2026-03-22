@@ -19,7 +19,8 @@ export enum GameState {
   START = 'START',
   PLAYING = 'PLAYING',
   FINISHED = 'FINISHED',
-  HISTORY = 'HISTORY'
+  HISTORY = 'HISTORY',
+  SETTINGS = 'SETTINGS'
 }
 
 export interface Word {

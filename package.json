@@ -1,6 +1,6 @@
 {
   "name": "lexile-spelling-master",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Lexile based spelling assessment app",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,10 @@
     "@capacitor/cli": "^6.0.0",
     "@capacitor/core": "^6.0.0",
     "@google/genai": "^1.46.0",
+    "@tailwindcss/vite": "^4.2.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",

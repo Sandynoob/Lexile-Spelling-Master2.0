@@ -25,6 +25,8 @@
       align-items: center; justify-content: center;
       background: #f8fafc; z-index: 9999;
       transition: opacity 0.5s ease;
+      padding: 20px;
+      text-align: center;
     }
     .spinner {
       width: 40px; height: 40px;
@@ -32,14 +34,50 @@
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
+    #error-message {
+      display: none;
+      color: #ef4444;
+      margin-top: 20px;
+      font-size: 14px;
+      max-width: 80%;
+      word-break: break-all;
+    }
+    #retry-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   </style>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  
   <!-- 全局防御脚本：防止系统注入插件崩溃 -->
   <script>
     (function() {
+      // 捕获所有 JS 错误并显示在加载屏幕上
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        var loader = document.getElementById('loading-screen');
+        var errorDiv = document.getElementById('error-message');
+        var retryBtn = document.getElementById('retry-btn');
+        var spinner = loader.querySelector('.spinner');
+        var statusText = loader.querySelector('p');
+        
+        if (errorDiv) {
+          errorDiv.innerText = "Error: " + msg + "\nLine: " + lineNo + ":" + columnNo;
+          errorDiv.style.display = 'block';
+        }
+        if (retryBtn) retryBtn.style.display = 'block';
+        if (spinner) spinner.style.display = 'none';
+        if (statusText) statusText.innerText = "Initialization Failed";
+        
+        return false;
+      };
+
       // 如果系统 TTS 被损坏，我们预先给它一个空的 cancel 方法，防止抛出 Uncaught TypeError
       if (window.speechSynthesis && !window.speechSynthesis.cancel) {
         window.speechSynthesis.cancel = function() {};
@@ -57,6 +95,8 @@
   <div id="loading-screen">
     <div class="spinner"></div>
     <p style="margin-top: 20px; color: #64748b; font-weight: bold;">Initializing Lexile Engine...</p>
+    <div id="error-message"></div>
+    <button id="retry-btn" onclick="window.location.reload()">Retry</button>
   </div>
 
   <div id="root"></div>

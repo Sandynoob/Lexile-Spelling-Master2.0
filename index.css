@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-kids: "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive;
+}
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+/* Custom animations for the game */
+@keyframes pop {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop {
+  animation: pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
