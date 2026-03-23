@@ -9,7 +9,7 @@ const Settings: React.FC = () => {
       </div>
       
       <h2 className="font-kids text-2xl text-indigo-900 mb-2">Lexile Master</h2>
-      <p className="text-slate-500 font-bold uppercase tracking-widest text-xs mb-8">Version 1.0.2</p>
+      <p className="text-slate-500 font-bold uppercase tracking-widest text-xs mb-8">Version 1.0.3</p>
 
       <div className="w-full space-y-4">
         <div className="bg-white p-5 rounded-3xl border border-indigo-50 shadow-sm">
